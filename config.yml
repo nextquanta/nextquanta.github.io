@@ -1,0 +1,29 @@
+baseURL: "https://rjaiswal.com/"
+languageCode: en-us
+title: Rishi Jaiswal
+theme: PaperMod
+
+params:
+  homeInfoParams:
+    Title: "Hi, I'm Rishi Jaiswal"
+    Content: >
+      Deep learning researcher interested in probabilistic machine learning, 
+      brain-inspired and physics-inspired learning.
+  
+  socialIcons:
+    - name: github
+      url: "https://github.com/nextquanta"
+    - name: email
+      url: "mailto:your.email@purdue.edu"
+
+menu:
+  main:
+    - name: About
+      url: /about/
+      weight: 1
+    - name: Publications
+      url: /publications/
+      weight: 2
+    - name: Blog
+      url: /blog/
+      weight: 3
