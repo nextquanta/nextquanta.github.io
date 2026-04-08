@@ -1,0 +1,178 @@
+{{ define "main" }}
+<canvas id="math-canvas"></canvas>
+
+<!-- Hero Section -->
+<div class="glass-container hero-container">
+    <div class="hero-section">
+        <p class="hero-tag">researcher / founder / engineer</p>
+        <h1 class="hero-name">Ris(h)i Jaiswal</h1>
+        <p class="subtitle">CTO at Transio AI &nbsp;|&nbsp; PhD, Purdue University</p>
+        <p class="hero-statement">
+            Building AI that learns like nature and reasons about the physical world.
+            Energy-efficient, physically grounded, spatially aware.
+        </p>
+        <div class="social-row">
+            <a href="https://scholar.google.com/citations?user=cxYoZb8AAAAJ&hl=en&oi=ao" target="_blank" class="social-link">Scholar</a>
+            <a href="https://github.com/nextquanta" target="_blank" class="social-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/risi-jaiswal-08b4215b/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="mailto:rjaiswal@transio.ai" class="social-link">Email</a>
+        </div>
+    </div>
+</div>
+
+<!-- Research Pillars -->
+<div class="glass-container pillars-container">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="pillars-grid">
+
+        <div class="pillar-card">
+            <div class="pillar-icon">&oplus;</div>
+            <h3>Spatial Intelligence & Robotics</h3>
+            <p>Understanding and reasoning about 3D space. Spatial perception for autonomous systems, embodied AI, and physical-world reasoning.</p>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-icon">&#x1D4DF;</div>
+            <h3>Bio-Inspired Learning</h3>
+            <p>Energy-efficient neural architectures inspired by biological systems. Alternatives to backpropagation, probabilistic computing, and stochastic neural networks.</p>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-icon">&nabla;</div>
+            <h3>Physics-Inspired AI</h3>
+            <p>Embedding physics into learning and inference. Probabilistic graphical models, Boltzmann machines, quantum-inspired optimization, and physics-informed learning.</p>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-icon">&lambda;</div>
+            <h3>Hardware & Systems</h3>
+            <p>GPU kernels, FPGA prototyping, and hardware-algorithm co-design. Bridging algorithms and silicon for petaflops-scale probabilistic computing.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Journey -->
+<div class="glass-container journey-container">
+    <h2 class="section-title">Journey</h2>
+    <div class="journey-grid">
+
+        <div class="journey-item current">
+            <span class="journey-period">2025 &ndash; Present</span>
+            <h3>CTO</h3>
+            <span class="journey-org">Transio AI</span>
+            <p>Leading technology vision and building AI-powered systems.</p>
+        </div>
+
+        <div class="journey-item">
+            <span class="journey-period">2021 &ndash; 2025</span>
+            <h3>PhD, Electrical & Computer Engineering</h3>
+            <span class="journey-org">Purdue University</span>
+            <p>Energy-efficient deep learning, probabilistic computing, quantum-inspired optimization. Advisors: Supriyo Datta & Joseph G. Makin.</p>
+        </div>
+
+        <div class="journey-item">
+            <span class="journey-period">2020</span>
+            <h3>Research Intern</h3>
+            <span class="journey-org">Microsoft</span>
+            <p>Formal verification and assertion-based validation of custom AI accelerator architectures.</p>
+        </div>
+
+        <div class="journey-item">
+            <span class="journey-period">2014 &ndash; 2019</span>
+            <h3>Senior Design Engineer</h3>
+            <span class="journey-org">NXP Semiconductors</span>
+            <p>Verification of DSP, RADAR-based ADAS subsystems, and neural network accelerators. US Patent holder.</p>
+        </div>
+
+    </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+    const canvas = document.getElementById('math-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const symbols = [
+        'E=mc\u00B2', '\u2202/\u2202t', 'kT ln2', '\u210B\u03C8=E\u03C8',
+        '\u2207\u00B7F', 'p(x|y)', '\u0394S\u22650', 'F=ma',
+        '\u222BdQ/T', 'e^{i\u03C0}', '\u2202L/\u2202q', 'KL(p||q)',
+        '\u222B', '\u2211', '\u2202', '\u2207', '\u03C0', '\u221E',
+        '\u03BB', '\u03B8', '\u03A9', '\u03A8', '\u210B', '\u2112',
+        '\u03C6', '\u03B1', '\u03B2', '\u0394', '\u03BC', '\u03C3'
+    ];
+    const particles = [];
+    const originX = canvas.width / 2;
+    const originY = canvas.height * 0.38;
+    let bangPhase = true;
+    let bangStart = Date.now();
+    const BANG_DURATION = 2500;
+
+    function getParticleColor() {
+        const theme = document.documentElement.getAttribute('data-theme');
+        return theme === 'light' ? 'rgba(0, 60, 120,' : 'rgba(0, 243, 255,';
+    }
+
+    class Particle {
+        constructor() {
+            this.text = symbols[Math.floor(Math.random() * symbols.length)];
+            this.size = Math.random() * 14 + 10;
+            this.angle = Math.random() * Math.PI * 2;
+            this.speed = Math.random() * 3 + 1.5;
+            this.targetX = originX + Math.cos(this.angle) * (Math.random() * canvas.width * 0.6 + 100);
+            this.targetY = originY + Math.sin(this.angle) * (Math.random() * canvas.height * 0.6 + 100);
+            this.x = originX + (Math.random() - 0.5) * 10;
+            this.y = originY + (Math.random() - 0.5) * 10;
+            this.driftX = (Math.random() - 0.5) * 0.2;
+            this.driftY = (Math.random() - 0.5) * 0.2;
+            this.alpha = 0;
+            this.targetAlpha = Math.random() * 0.2 + 0.05;
+            this.fadeDir = (Math.random() - 0.5) * 0.001;
+        }
+        update(progress) {
+            if (bangPhase) {
+                var ease = 1 - Math.pow(1 - progress, 3);
+                this.x = originX + (this.targetX - originX) * ease;
+                this.y = originY + (this.targetY - originY) * ease;
+                this.alpha = this.targetAlpha * Math.min(progress * 2, 1);
+            } else {
+                this.x += this.driftX;
+                this.y += this.driftY;
+                this.alpha += this.fadeDir;
+                if (this.alpha > 0.25 || this.alpha < 0.03) this.fadeDir *= -1;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+        }
+        draw() {
+            ctx.fillStyle = getParticleColor() + this.alpha + ')';
+            ctx.font = this.size + 'px "JetBrains Mono", monospace';
+            ctx.fillText(this.text, this.x, this.y);
+        }
+    }
+
+    for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var elapsed = Date.now() - bangStart;
+        var progress = Math.min(elapsed / BANG_DURATION, 1);
+        if (progress >= 1 && bangPhase) {
+            bangPhase = false;
+        }
+        particles.forEach(function(p) { p.update(progress); p.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>
+{{ end }}

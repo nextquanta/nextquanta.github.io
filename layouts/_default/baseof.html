@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ $style := resources.Get "css/nerd-theme.css" | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">Ris(h)i Jaiswal</a>
+            <div class="nav-links">
+                <a href="/research/">Research</a>
+                <a href="/publications/">Publications</a>
+                <a href="/about/">About</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+            <button class="nav-mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/research/">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; {{ now.Year }} Ris(h)i Jaiswal</p>
+        </div>
+    </footer>
+
+    <!-- Background Particles -->
+    <script>
+    (function() {
+        const c = document.getElementById('bg-canvas');
+        if (!c) return;
+        const ctx = c.getContext('2d');
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+
+        const glyphs = [
+            'E=mc\u00B2', '\u2202/\u2202t', 'kT ln2', '\u210B\u03C8=E\u03C8',
+            '\u2207\u00B7F', 'p(x|y)', '\u0394S\u22650', 'F=ma',
+            '\u222BdQ/T', '\u03C1\u0307', '\u2211\u1D62', 'e^{i\u03C0}',
+            '\u2202L/\u2202q', 'KL(p||q)', '\u03BB', '\u03B8', '\u03A8',
+            '\u2207', '\u222B', '\u2211', '\u221E', '\u03C0',
+            '\u29BB', '\u2316', '\u2318', '\u238A',
+            '\u2394', '\u23E7', '\u2699', '\u26A1',
+            '\uD83E\uDDE0', '\uD83E\uDD16', '\u2699\uFE0F'
+        ];
+        const particles = [];
+
+        function color() {
+            const t = document.documentElement.getAttribute('data-theme');
+            return t === 'light' ? 'rgba(0, 40, 90,' : 'rgba(0, 243, 255,';
+        }
+
+        class P {
+            constructor() {
+                this.x = Math.random() * c.width;
+                this.y = Math.random() * c.height;
+                this.text = glyphs[Math.floor(Math.random() * glyphs.length)];
+                this.size = Math.random() * 11 + 9;
+                this.vx = (Math.random() - 0.5) * 0.2;
+                this.vy = (Math.random() - 0.5) * 0.2;
+                this.a = Math.random() * 0.25 + 0.08;
+                this.da = (Math.random() - 0.5) * 0.0015;
+            }
+            update() {
+                this.x += this.vx; this.y += this.vy;
+                this.a += this.da;
+                if (this.a > 0.35 || this.a < 0.05) this.da *= -1;
+                if (this.x > c.width) this.x = 0;
+                if (this.x < 0) this.x = c.width;
+                if (this.y > c.height) this.y = 0;
+                if (this.y < 0) this.y = c.height;
+            }
+            draw() {
+                ctx.fillStyle = color() + this.a + ')';
+                ctx.font = this.size + 'px "JetBrains Mono", monospace';
+                ctx.fillText(this.text, this.x, this.y);
+            }
+        }
+
+        for (let i = 0; i < 55; i++) particles.push(new P());
+
+        function loop() {
+            ctx.clearRect(0, 0, c.width, c.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(loop);
+        }
+        loop();
+
+        window.addEventListener('resize', () => { c.width = window.innerWidth; c.height = window.innerHeight; });
+    })();
+    </script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        (function() {
+            const toggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            const stored = localStorage.getItem('theme');
+            if (stored) {
+                html.setAttribute('data-theme', stored);
+            }
+            toggle.addEventListener('click', () => {
+                const current = html.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+
+            // Mobile menu
+            const mobileToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                mobileToggle.classList.toggle('open');
+            });
+        })();
+    </script>
+
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

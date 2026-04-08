@@ -1,29 +1,45 @@
 baseURL: "https://rjaiswal.com/"
 languageCode: en-us
-title: Rishi Jaiswal
+title: Ris(h)i Jaiswal | Researcher & CTO
 theme: PaperMod
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 params:
   homeInfoParams:
-    Title: "Hi, I'm Rishi Jaiswal"
+    Title: "Ris(h)i Jaiswal"
     Content: >
-      Deep learning researcher interested in probabilistic machine learning, 
-      brain-inspired and physics-inspired learning.
-  
+      CTO at Transio AI | PhD, Purdue University
+
+  description: "Ris(h)i Jaiswal - Researcher & CTO at Transio AI. Physics-inspired AI, bio-inspired learning, spatial intelligence, and robotics."
+
   socialIcons:
+    - name: googlescholar
+      url: "https://scholar.google.com/citations?user=cxYoZb8AAAAJ&hl=en&oi=ao"
     - name: github
       url: "https://github.com/nextquanta"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/risi-jaiswal-08b4215b/"
     - name: email
-      url: "mailto:your.email@purdue.edu"
+      url: "mailto:rjaiswal@transio.ai"
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
 
 menu:
   main:
-    - name: About
-      url: /about/
+    - name: Research
+      url: /research/
       weight: 1
     - name: Publications
       url: /publications/
       weight: 2
-    - name: Blog
-      url: /blog/
+    - name: About
+      url: /about/
       weight: 3
