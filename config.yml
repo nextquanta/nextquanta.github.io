@@ -8,10 +8,8 @@ markup:
     renderer:
       unsafe: true
 
-author:
-  name: "Ris(h)i Jaiswal"
-
 params:
+  author: "Ris(h)i Jaiswal"
   homeInfoParams:
     Title: "Ris(h)i Jaiswal"
     Content: >

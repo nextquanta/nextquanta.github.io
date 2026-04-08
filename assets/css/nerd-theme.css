@@ -344,6 +344,32 @@ hr {
    SECTION TITLES
    ═══════════════════════════════════════════════ */
 
+/* Section Nav (homepage) */
+.section-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.section-nav-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.section-nav-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--card-hover-bg);
+}
+
 .section-title {
     font-size: 1.05rem;
     font-family: 'JetBrains Mono', monospace;

@@ -40,6 +40,22 @@ I have a long-standing interest in how nature computes. How do physical and biol
 
 ---
 
+## Hackathons & Projects
+
+**Physical AI Hackathon** : Built a cup stacking robotics platform for the competition.
+
+<img src="/images/robohacks.gif" alt="Cup stacking robot" style="max-width: 400px; border-radius: 10px; margin-top: 12px; border: 1px solid var(--glass-border);">
+
+**GPU-Accelerated TSP Solver** : Custom CUDA kernels for massively parallel Travelling Salesman Problem optimization.
+
+<img src="/images/tsp.png" alt="GPU-Accelerated TSP Solver" style="max-width: 500px; border-radius: 10px; margin-top: 12px; border: 1px solid var(--glass-border);">
+
+**DAG Structure Learning with Metropolis Heuristics** : Metropolis algorithm for learning probabilistic graphical model structures at scale.
+
+<img src="/images/dag.png" alt="DAG Structure Learning" style="max-width: 500px; border-radius: 10px; margin-top: 12px; border: 1px solid var(--glass-border);">
+
+---
+
 ## Beyond Work
 
 Outside the lab I train for marathons, lift weights, and get into the mountains whenever I can. I'm into high-altitude trekking. I like pushing limits, whether that's a squat PR or a 5000m summit. I also read widely across learning theory, philosophy of science, and whatever rabbit hole catches my attention that week.
