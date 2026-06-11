@@ -9,7 +9,7 @@ showToc: false
 
 ## Ris(h)i Jaiswal
 
-I am the **CTO at Transio AI** and hold a **PhD in Electrical & Computer Engineering from Purdue University**, where I was advised by **Supriyo Datta** and **Joseph G. Makin**.
+I am the **Cofounder and CTO at Transio AI** and hold a **PhD in Electrical & Computer Engineering from Purdue University**, where I was advised by **Supriyo Datta** and **Joseph G. Makin**.
 
 My work spans physics and machine learning, drawing inspiration from biological systems to build AI that is energy-efficient by design and grounded in the physical world.
 
@@ -34,25 +34,31 @@ I have a long-standing interest in how nature computes. How do physical and biol
 - BTech, Information Technology — IIIT Allahabad (2010 -- 2014)
 
 **Industry**
-- **CTO** — Transio AI (2025 -- Present)
+- **Cofounder & CTO** — Transio AI (Jan 2026 -- Present)
 - **Research Intern** — Microsoft, Redmond (2020)
 - **Senior Design Engineer** — NXP Semiconductors (2014 -- 2019)
 
 ---
 
-## Hackathons & Projects
+## Hackathons
 
-**Physical AI Hackathon** : Built a cup stacking robotics platform for the competition.
+<style>
+.hack-collage{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 16px;}
+.hack-collage figure{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--glass-border);aspect-ratio:3/4;background:#0b0b0f;}
+.hack-collage img,.hack-collage video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease;}
+.hack-collage figure:hover img,.hack-collage figure:hover video{transform:scale(1.06);}
+.hack-collage figcaption{position:absolute;left:0;right:0;bottom:0;padding:20px 10px 9px;font-size:.74rem;font-weight:600;line-height:1.2;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.8));}
+</style>
 
-<img src="/images/robohacks.gif" alt="Cup stacking robot" style="max-width: 400px; border-radius: 10px; margin-top: 12px; border: 1px solid var(--glass-border);">
+<div class="hack-collage">
+<figure><img src="/images/yc-hackathon.jpg" alt="YC Robo Hackathon 2026 — Multimodal category winner"><figcaption>YC Robo Hackathon 2026 · Winner</figcaption></figure>
+<figure><video src="/images/spc-hackathon.mp4" autoplay loop muted playsinline></video><figcaption>SPC Embodied AI Hackathon</figcaption></figure>
+<figure><img src="/images/robohacks.gif" alt="Physical AI Hackathon — cup-stacking robot"><figcaption>Physical AI Hackathon</figcaption></figure>
+</div>
 
-**GPU-Accelerated TSP Solver** : Custom CUDA kernels for massively parallel Travelling Salesman Problem optimization.
-
-<img src="/images/tsp.png" alt="GPU-Accelerated TSP Solver" style="max-width: 500px; border-radius: 10px; margin-top: 12px; border: 1px solid var(--glass-border);">
-
-**DAG Structure Learning with Metropolis Heuristics** : Metropolis algorithm for learning probabilistic graphical model structures at scale.
-
-<img src="/images/dag.png" alt="DAG Structure Learning" style="max-width: 500px; border-radius: 10px; margin-top: 12px; border: 1px solid var(--glass-border);">
+- **2026 · YC Robo Hackathon** — Winner, Multimodal category.
+- **2026 · SPC Embodied AI Hackathon** — Embodied-AI robotic manipulation build.
+- **2026 · Physical AI Hackathon** — Built a cup-stacking robotics platform for the competition.
 
 ---
 

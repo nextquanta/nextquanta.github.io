@@ -37,8 +37,8 @@ From custom CUDA kernels for MCMC-based optimization to FPGA-based Boltzmann mac
 <div class="timeline-item">
 <div class="timeline-dot"></div>
 <div class="timeline-content">
-<span class="date">2025 &ndash; Present</span>
-<h3>CTO</h3>
+<span class="date">Jan 2026 &ndash; Present</span>
+<h3>Cofounder & CTO</h3>
 <span class="company">Transio AI</span>
 <p>Leading technology strategy and building AI-powered systems.</p>
 </div>
