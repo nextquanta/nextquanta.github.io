@@ -31,7 +31,7 @@ I have a long-standing interest in how nature computes. How do physical and biol
 **Education**
 - PhD, Electrical & Computer Engineering — Purdue University (2021 -- 2025)
 - MS, Electrical & Computer Engineering — Purdue University (2019 -- 2021)
-- BTech, Information Technology — IIIT Allahabad (2010 -- 2014)
+- BTech, Electronics and Communication — IIIT Allahabad (2010 -- 2014)
 
 **Industry**
 - **Cofounder & CTO** — Transio AI (Jan 2026 -- Present)
