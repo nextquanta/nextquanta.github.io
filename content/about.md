@@ -3,6 +3,7 @@ title: "About"
 date: 2024-11-10
 draft: false
 showToc: false
+description: "Ris(h)i Jaiswal — Cofounder & CTO at Transio AI and a Purdue ECE PhD. Background, research interests, hackathon wins, and what I work on."
 ---
 
 <img src="/images/profile.jpg" alt="Ris(h)i Jaiswal" style="width: 140px; border-radius: 10px; float: right; margin: 0 0 20px 28px; border: 1px solid var(--glass-border);">

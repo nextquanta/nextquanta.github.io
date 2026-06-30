@@ -2,3 +2,10 @@ public/
 .claude/
 .DS_Store
 resume_risi.pdf
+
+# Stray phone/camera captures dropped in the repo root (real site media lives in static/)
+/*.mov
+/*.MOV
+/*.JPG
+/*.jpeg
+/*.HEIC

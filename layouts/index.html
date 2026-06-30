@@ -1,5 +1,5 @@
 {{ define "main" }}
-<canvas id="math-canvas"></canvas>
+<canvas id="math-canvas" aria-hidden="true"></canvas>
 
 <!-- Hero Section -->
 <div class="glass-container hero-container">
@@ -164,6 +164,9 @@
 
     for (let i = 0; i < 60; i++) particles.push(new Particle());
 
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var rafId = null;
+
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         var elapsed = Date.now() - bangStart;
@@ -172,13 +175,34 @@
             bangPhase = false;
         }
         particles.forEach(function(p) { p.update(progress); p.draw(); });
-        requestAnimationFrame(animate);
+        rafId = requestAnimationFrame(animate);
     }
-    animate();
+
+    function renderStatic() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(function(p) { p.update(1); p.draw(); });
+    }
+
+    if (reduceMotion) {
+        // Skip the animated "big bang": render a single static, fully-expanded frame.
+        renderStatic();
+    } else {
+        animate();
+        // Pause while the tab is hidden to save CPU/battery.
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+            } else if (rafId === null) {
+                animate();
+            }
+        });
+    }
 
     window.addEventListener('resize', function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        // Resizing clears the canvas bitmap; repaint the static frame for reduced-motion users.
+        if (reduceMotion) renderStatic();
     });
 </script>
 {{ end }}

@@ -3,6 +3,7 @@ title: "Publications"
 date: 2024-11-10
 draft: false
 showToc: false
+description: "Journal and conference papers (ISSCC, IEDM), preprints, a Purdue thesis, and a US patent by Ris(h)i Jaiswal — energy-efficient and probabilistic computing."
 ---
 
 ## Journal Papers

@@ -228,6 +228,24 @@ hr {
     color: var(--accent);
 }
 
+.mobile-menu-theme {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 4px;
+    padding: 12px 0 4px;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.mobile-menu-theme:hover {
+    color: var(--accent);
+}
+
 /* ═══════════════════════════════════════════════
    CANVAS
    ═══════════════════════════════════════════════ */
@@ -731,4 +749,17 @@ hr {
 @media (max-width: 480px) {
     .hero-name { font-size: 1.8rem; }
     .glass-container { padding: 22px 16px; }
+}
+
+/* ═══════════════════════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

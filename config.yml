@@ -3,6 +3,10 @@ languageCode: en-us
 title: Ris(h)i Jaiswal | Researcher, Cofounder & CTO
 theme: PaperMod
 
+# The site uses no tags/categories; don't generate empty taxonomy/term pages
+# (keeps them out of the build, the sitemap, and out of search indexes).
+disableKinds: ["taxonomy", "term"]
+
 markup:
   goldmark:
     renderer:

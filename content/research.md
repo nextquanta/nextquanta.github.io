@@ -3,6 +3,7 @@ title: "Research"
 date: 2024-11-10
 draft: false
 showToc: false
+description: "Physics- and bio-inspired AI, probabilistic computing, quantum-inspired optimization, and hardware-algorithm co-design — research by Ris(h)i Jaiswal."
 ---
 
 ## Research Philosophy
