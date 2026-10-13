@@ -3,14 +3,14 @@ title: "About"
 date: 2024-11-10
 draft: false
 showToc: false
-description: "Ris(h)i Jaiswal — Cofounder & CTO at Transio AI and a Purdue ECE PhD. Background, research interests, hackathon wins, and what I work on."
+description: "Ris(h)i Jaiswal — Principal ML Scientist at Ludwig Computing and a Purdue ECE PhD. Background, research interests, hackathon wins, and what I work on."
 ---
 
 <img src="/images/profile.jpg" alt="Ris(h)i Jaiswal" style="width: 140px; border-radius: 10px; float: right; margin: 0 0 20px 28px; border: 1px solid var(--glass-border);">
 
 ## Ris(h)i Jaiswal
 
-I am the **Cofounder and CTO at Transio AI** and hold a **PhD in Electrical & Computer Engineering from Purdue University**, where I was advised by **Supriyo Datta** and **Joseph G. Makin**.
+I am a **Principal ML Scientist at Ludwig Computing**, working on **probabilistic computing for efficient LLM inference**. I hold a **PhD in Electrical & Computer Engineering from Purdue University**, where I was advised by **Supriyo Datta** and **Joseph G. Makin**.
 
 My work spans physics and machine learning, drawing inspiration from biological systems to build AI that is energy-efficient by design and grounded in the physical world.
 
@@ -20,6 +20,7 @@ My work spans physics and machine learning, drawing inspiration from biological 
 
 I have a long-standing interest in how nature computes. How do physical and biological systems process information so efficiently? And how do we build artificial systems that approach those fundamental limits? My research and engineering work centers on:
 
+- **Efficient LLM inference** : probabilistic computing for large language models
 - **Spatial intelligence and robotics** : 3D reasoning, embodied AI, autonomous systems
 - **Bio-inspired, energy-efficient learning and inference** : alternatives to backpropagation, probabilistic computing, stochastic neural networks
 - **Physics-inspired AI** : embedding physics into learning, Boltzmann machines, quantum-inspired optimization
@@ -35,7 +36,8 @@ I have a long-standing interest in how nature computes. How do physical and biol
 - BTech, Electronics and Communication — IIIT Allahabad (2010 -- 2014)
 
 **Industry**
-- **Cofounder & CTO** — Transio AI (Jan 2026 -- Present)
+- **Principal ML Scientist** — Ludwig Computing (Current)
+- **Cofounder & CTO** — Transio AI (Previously)
 - **Research Intern** — Microsoft, Redmond (2020)
 - **Senior Design Engineer** — NXP Semiconductors (2014 -- 2019)
 
@@ -69,4 +71,4 @@ Outside the lab I train for marathons, lift weights, and get into the mountains 
 
 ---
 
-**Email**: [rjaiswal@transio.ai](mailto:rjaiswal@transio.ai)
+**Email**: [risijaiswal19@gmail.com](mailto:risijaiswal19@gmail.com)

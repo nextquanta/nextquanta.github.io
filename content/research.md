@@ -3,7 +3,7 @@ title: "Research"
 date: 2024-11-10
 draft: false
 showToc: false
-description: "Physics- and bio-inspired AI, probabilistic computing, quantum-inspired optimization, and hardware-algorithm co-design — research by Ris(h)i Jaiswal."
+description: "Efficient LLM inference, physics- and bio-inspired AI, probabilistic computing, quantum-inspired optimization, and hardware-algorithm co-design — research by Ris(h)i Jaiswal."
 ---
 
 ## Research Philosophy
@@ -14,9 +14,13 @@ I believe the next generation of AI will draw deeply from physics, taking inspir
 
 ## Focus Areas
 
+### Efficient LLM Inference
+
+At **Ludwig Computing**, I work on **probabilistic computing for efficient large language model inference**, bringing together my background in stochastic neural networks, physics-inspired algorithms, and hardware-algorithm co-design.
+
 ### Spatial Intelligence & Robotics
 
-A new direction in my work. Building AI that understands and reasons about **3D space**, spatial perception, embodied reasoning, and the foundations of Physical AI for autonomous systems and robotics.
+My previous work at **Transio AI** focused on spatial intelligence and world models: AI that understands and reasons about **3D space**, spatial perception, embodied reasoning, and the foundations of Physical AI for autonomous systems and robotics.
 
 ### Bio-Inspired Energy-Efficient Learning & Inference
 
@@ -38,10 +42,19 @@ From custom CUDA kernels for MCMC-based optimization to FPGA-based Boltzmann mac
 <div class="timeline-item">
 <div class="timeline-dot"></div>
 <div class="timeline-content">
-<span class="date">Jan 2026 &ndash; Present</span>
+<span class="date">Current</span>
+<h3>Principal ML Scientist</h3>
+<span class="company">Ludwig Computing</span>
+<p>Probabilistic computing for efficient large language model inference.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<span class="date">Previously</span>
 <h3>Cofounder & CTO</h3>
 <span class="company">Transio AI</span>
-<p>Leading technology strategy and building AI-powered systems.</p>
+<p>Worked on spatial intelligence and world models.</p>
 </div>
 </div>
 <div class="timeline-item">
